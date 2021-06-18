@@ -6,29 +6,9 @@ using System.Threading.Tasks;
 
 namespace EmployeeApp
 {
-    class Employee
+    partial class Employee
     {
-        //field data
-        private string empName;
-        private int empID;
-        private float currPay;
-
-        //new field and property
-        private string empSSN;
-        private int empAge;
-        public int Age{get => empAge;set =>empAge = value;}
-        public string EmpSSN { get => empSSN; }
-        //constructors
-        public Employee() { }
-        public Employee(string name, int id, float pay)
-           : this(name, 0, id, pay) { }
-        public Employee(string name,int age, int id,float pay)
-        {
-            empName = name;
-            empAge = age;
-            empID = id;
-            currPay = pay;
-        }
+       //
 
         //methods
         public void GiveBonus(float amount) => currPay += amount;//expression-bodied method
@@ -58,6 +38,8 @@ namespace EmployeeApp
         //methods to encapsulate each field data
         //we use the .Net property(a simplification of get/set methods
         //below are the properties
+        public int Age { get => empAge; set => empAge = value; }
+        public string EmpSSN { get => empSSN; }
         public string Name
         { get { return empName; }
         set
